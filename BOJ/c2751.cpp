@@ -1,4 +1,5 @@
 #include <iostream>
+//#include <algorithm>
 
 #define MAX 1000001
 #define swap(a,b) (temp) = (a); (a) = (b); (b) = (temp);
@@ -10,8 +11,8 @@ int partition(int list[], int left, int right)
 	int temp;
 	int high, low, pivot;
 	
-	pivot = list[right];
-	low = left; 
+	pivot = list[left];
+	low = left+1; 
 	high = right;
 
 	do {
@@ -31,12 +32,13 @@ int partition(int list[], int left, int right)
 
 void quickSort(int list[], int left, int right)
 {
-	if (!(left < right)) return;
+	if (left < right){
 	
-	int q = partition(list, left, right); //피벗
+		int q = partition(list, left, right); //피벗
 
-	quickSort(list, left, q - 1); //피벗보다 작은 왼쪽 리스트 정복
-	quickSort(list, q + 1, right);//피벗보다 큰 오른쪽 리스트 정복
+		quickSort(list, left, q - 1); //피벗보다 작은 왼쪽 리스트 정복
+		quickSort(list, q + 1, right);//피벗보다 큰 오른쪽 리스트 정복
+	}
 }
 
 int main() {
@@ -49,6 +51,7 @@ int main() {
 	}
 
 	quickSort(arr, 0, num-1);
+	//std::sort(arr, arr+num);
 
 	for(int i = 0; i < num; i++){
 		printf("%d\n", arr[i]);
