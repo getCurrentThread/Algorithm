@@ -10,7 +10,10 @@ int partition(int list[], int left, int right)
 {
 	int temp;
 	int high, low, pivot;
+	int mid = left + (right - left) / 2; //(left+right) /2;
 	
+	swap(list[left], list[mid])
+
 	pivot = list[left];
 	low = left+1; 
 	high = right;
