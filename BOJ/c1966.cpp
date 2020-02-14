@@ -9,10 +9,6 @@ typedef struct _Doc {
 	int docPriority;
 }Doc;
 
-bool operator<(Doc a, Doc b) {
-	return a.docNum < b.docNum;
-}
-
 int main() {
 
 	int tcase;
@@ -20,7 +16,6 @@ int main() {
 	Doc Tdoc;
 
 	int priority;
-	int priorMax = -1;
 
 	scanf("%d", &tcase);
 
@@ -28,21 +23,37 @@ int main() {
 	{
 		scanf("%d %d", &n, &m);
 		queue<Doc, list<Doc> > q;
+		priority_queue<int> qp;
 		for (int i = 0; i < n; i++) {
 			scanf("%d", &priority);
 			Tdoc.docNum = i;
 			Tdoc.docPriority = priority;
 			q.push(Tdoc);
+			qp.push(priority);
 		}
 		
-		for (int i = 1; !pq.empty(); i++) {
-			Tdoc = pq.top();
-			pq.pop();
-			if (m == Tdoc.docNum) {
-				printf("%d!\n", i);
+		int printNum = 0;
+		while (!qp.empty()) {
+			priority = qp.top(); qp.pop();
+			
+			while (!q.empty()){
+				Tdoc = q.front(); q.pop();
+				if (Tdoc.docPriority == priority) {
+					printNum++;
+					break;
+				}
+				else {
+					q.push(Tdoc);
+				}
+			}
+
+			if (Tdoc.docNum == m) {
+				printf("%d\n", printNum);
 				break;
 			}
 		}
+
+		
 	}
 
 
