@@ -93,5 +93,8 @@
     <ClCompile Include="c5430.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="c6603.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
