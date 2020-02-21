@@ -11,27 +11,22 @@ int n;
 int s[MAX][MAX];
 int min_value = 12345678;
 
-vector<int> v;
+bool v[MAX];
 
 void solve(int stack) {
 	for (int i = stack; i < n; i++) {
-		v.push_back(i);
-		if (v.size() == (n / 2)) {
+		v[i] = true;
+		if ((stack + 1) == (n / 2)) {
 			int ans = 0;
-			vector<int> r;
+
 			for (int i = 0; i < n; i++) {
-				if (find(v.begin(), v.end(), i) == v.end()) {
-					r.push_back(i);
-				}
-			}
-			for (vector<int>::iterator i = v.begin(); i != v.end(); i++) {
-				for (vector<int>::iterator j = v.begin(); j != v.end(); j++) {
-					ans += s[*i][*j];
-				}
-			}
-			for (vector<int>::iterator i = r.begin(); i != r.end(); i++) {
-				for (vector<int>::iterator j = r.begin(); j != r.end(); j++) {
-					ans -= s[*i][*j];
+				for (int j = 0; j < n; j++) {
+					if (v[i] && v[j]) {
+						ans += s[i][j];
+					}
+					else if ((!v[i]) && (!v[j])) {
+						ans -= s[i][j];
+					}
 				}
 			}
 			if (min_value > abs(ans)) {
@@ -41,7 +36,7 @@ void solve(int stack) {
 		else{
 			solve(stack + 1);
 		}
-		v.pop_back();
+		v[i] = false;
 	}
 }
 
