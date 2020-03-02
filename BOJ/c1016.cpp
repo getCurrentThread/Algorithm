@@ -15,12 +15,6 @@ vector<int> prime;
 bitset<1000001> chk;
 int ans;
 
-int isPrime(int64 a) {
-	for (int i = 0; i < prime.size(); i++) {
-		if (a % prime[i] == 0)
-			return true;
-	}
-}
 void seive(int max) {
 	int rmax = sqrt((double)max) + 1.;
 	b.set(0); b.set(1);

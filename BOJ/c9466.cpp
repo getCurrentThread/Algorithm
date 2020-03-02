@@ -4,26 +4,49 @@
 
 using namespace std;
 
-int n;
-int t;
+int t, n, cnt;
+vector<int> v;
+vector<bool> visited;
+vector<int> recur;
+
 int tmp;
-vector<pair<int, int> > v;
+
+bool dfs(int i) {
+	visited[i] = true;
+	recur[i]++;
+	if (visited[v[i]]) { // 방문하려는 노드가 이미 방문한 경우.
+		return false;
+	}
+	if (recur[i] == 2) {
+		
+	}
+}
 
 int main() {
 	scanf("%d", &t);
 
-	for(int i = 0; i < t; i++){
+	for (int i = 0; i < t; i++) {
 		scanf("%d", &n);
+
 		v.resize(n + 1);
-		fill(v.begin(), v.end(), 0);
-		for (int i = 0; i < n; i++) {
+		visited.resize(n + 1);
+		recur.resize(n + 1);
+
+		cnt = 0;
+
+		for (int i = 1; i < n + 1; i++) {
 			scanf("%d", &tmp);
-			v[i + 1] = { tmp, 0 };
+			v[i] = tmp;
+			visited[i] = false; recur[i] = 0; //init
 		}
 
-		for (int i = 1; i <= n; i++) {
-
+		for (int i = 1; i < n + 1; i++)
+		{
+			if(visited[i] == false)
+				dfs(i);
 		}
+
+		printf("%d\n", n - cnt);
 	}
 
 	return 0;
