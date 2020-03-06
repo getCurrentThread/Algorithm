@@ -259,6 +259,9 @@
     <ClCompile Include="c1422.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="c1939.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="c1890.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
