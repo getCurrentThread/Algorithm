@@ -10,22 +10,10 @@
     <ClCompile Include="c1181.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="c1110.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="c2965.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="c3933.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="c5014.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="c10171.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="c14716.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="c2750.cpp">
@@ -278,6 +266,18 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="c11051.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="c1110.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="c2965.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="c3933.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="c14716.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
