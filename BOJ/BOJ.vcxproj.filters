@@ -283,5 +283,8 @@
     <ClCompile Include="c1992.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="c11729.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
