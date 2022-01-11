@@ -8,7 +8,7 @@
 
 ### 분류
 
-플로이드–와샬(floyd_warshall), 그래프 이론(graphs)
+플로이드–와샬(floyd_warshall), 그래프 이론(graphs), 그래프 탐색(graph_traversal)
 
 ### 문제 설명
 

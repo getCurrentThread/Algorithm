@@ -2,7 +2,6 @@
 #include <vector>
 #include <bitset>
 #include <algorithm>
-#include <cassert>
 
 #define MAX 1000
 
@@ -28,7 +27,7 @@ void init() {
 
 int main() {
 	scanf("%d", &Tcase);
-	for (int i = 0; i < Tcase; i++) {
+	for(int i = 0; i < Tcase; i ++){
 		init();
 		scanf("%d %d", &n, &m);
 		int a, b;
@@ -37,9 +36,8 @@ int main() {
 			v.push_back({ a,b });
 		}
 		sort(v.begin(), v.end(), cmp);
-
+		
 		for (int i = 0; i < v.size(); i++) {
-			assert(v[i].first <= v[i].second);
 			for (int j = v[i].first; j <= v[i].second; j++) {
 				if (!selled[j]) {
 					selled[j] = true;

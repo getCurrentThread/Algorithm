@@ -22,16 +22,12 @@ bool solve(int deep) {
 	bits.reset();
 	for (int i = 0; i < 9; i++) {
 		bits.set(board[pos.first][i]);
-	}
-	for (int i = 0; i < 9; i++) {
 		bits.set(board[i][pos.second]);
 	}
 
-	int m = (pos.first / 3) * 3;
-	int n = (pos.second / 3) * 3;
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			bits.set(board[m + i][n + j]);
+			bits.set(board[(pos.first / 3) * 3 + i][(pos.second / 3) * 3 + j]);
 		}
 	}
 

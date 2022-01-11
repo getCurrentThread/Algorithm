@@ -63,26 +63,6 @@ public class Main {
 		}
 	}
 
-	private static boolean dfs(int x, int y, int flag, int depth) {
-		if (depth > ans) {
-			ans = depth;
-			if (ans == 26)
-				return true;
-		}
-		for (int i = 0; i < 4; i++) {
-			int cx = x + dx[i];
-			int cy = y + dy[i];
-			if (0 <= cx && 0 <= cy && cx < R && cy < C) {
-				if ((flag & (1 << (map[cx][cy] - 'A'))) == 0) {
-					if (dfs(cx, cy, flag | (1 << (map[cx][cy] - 'A')), depth + 1)) {
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
-
 	public static void main(String[] args) throws Exception {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(in.readLine());
@@ -97,8 +77,7 @@ public class Main {
 			}
 		}
 
-		dfs(0, 0, 1 << (map[0][0] - 'A'), 1);
-		// bfs();
+		bfs();
 
 		System.out.println(ans);
 	}

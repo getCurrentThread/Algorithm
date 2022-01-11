@@ -1,10 +1,11 @@
 #include <iostream>
+#include <bitset>
 
 #define MAX 2000001
 
 using namespace std;
 
-int counts[MAX];
+bitset<MAX> counts;
 
 int main() {
 	int num;
@@ -14,7 +15,7 @@ int main() {
 
 	for (int i = 0; i < num; i++) {
 		scanf("%d", &temp);
-		counts[temp + 1000000]++;
+		counts.set(temp + 1000000);
 	}
 
 

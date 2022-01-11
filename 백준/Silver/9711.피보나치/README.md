@@ -1,10 +1,10 @@
-# [Silver I] 피보나치 - 9711 
+# [Silver II] 피보나치 - 9711 
 
 [문제 링크](https://www.acmicpc.net/problem/9711) 
 
 ### 성능 요약
 
-메모리: 19972 KB, 시간: 1208 ms
+메모리: 18932 KB, 시간: 1144 ms
 
 ### 분류
 
