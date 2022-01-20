@@ -25,7 +25,7 @@ int main() {
 
 	for (int i = 0; i < n - 1; i++) {
 		pq.push(city[i]);
-		ans += (int64)pq.top() * road[i];
+		ans += pq.top() * road[i];
 	}
 
 	printf("%lld", ans);

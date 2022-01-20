@@ -1,4 +1,4 @@
-# [Gold V] LCS 2 - 9252 
+# [Gold IV] LCS 2 - 9252 
 
 [문제 링크](https://www.acmicpc.net/problem/9252) 
 
