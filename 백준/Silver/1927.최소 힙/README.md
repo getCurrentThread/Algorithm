@@ -1,4 +1,4 @@
-# [Silver I] 최소 힙 - 1927 
+# [Silver II] 최소 힙 - 1927 
 
 [문제 링크](https://www.acmicpc.net/problem/1927) 
 
