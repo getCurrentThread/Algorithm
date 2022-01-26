@@ -47,8 +47,7 @@ public class Main {
         for (int i = 0; i < dp.length; i++) {
             Arrays.fill(dp[i], MAX);
         }
-
-        return TSP(N, dist, dp, 0, 0);
+        return TSP(N, dist, dp, 1 << 0, 0);
     }
 
     private static int TSP(final int N, final int[][] dist, final int[][] dp, final int mask, final int cur) {
@@ -66,8 +65,7 @@ public class Main {
                 mn = Math.min(mn, dist[cur][next] + TSP(N, dist, dp, mask | (1 << next), next));
             }
         }
-
-        dp[mask][cur] = mn;
-        return mn;
+        
+        return  dp[mask][cur] = mn;
     }
 }
