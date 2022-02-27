@@ -389,3 +389,8 @@ healthchecksdb
 MigrationBackup/
 
 # End of https://www.gitignore.io/api/c++,visualstudio
+
+out/
+.idea/
+src/
+*.iml
