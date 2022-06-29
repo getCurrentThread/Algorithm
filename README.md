@@ -1,2 +1,2 @@
 # BOJ
-getCurrentThread's beakjoon algorithm. :)
+getCurrentThread's baekjoon algorithm. :)
