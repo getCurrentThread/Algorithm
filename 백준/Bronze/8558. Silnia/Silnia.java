@@ -6,15 +6,7 @@ public class Main {
 
         int n = Integer.parseInt(br.readLine());
 
-        int result = 0;
-        if (n < 5) {
-            int tmp = 1;
-            for (int i = 2; i <= n; i++) {
-                tmp *= i;
-            }
-            result = tmp % 10;
-        }
-
-        System.out.println(result);
+        int[] arr = {1, 1, 2, 6, 4, 0};
+        System.out.println(n >= 5? arr[5] : arr[n]);
     }
 }
