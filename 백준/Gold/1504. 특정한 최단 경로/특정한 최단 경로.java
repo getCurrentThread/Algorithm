@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    final static int INF = 200000000;
+    final static int INF = 987654321;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -36,7 +36,8 @@ public class Main {
                 , dijkstra(graph, 1, v2) + dijkstra(graph, v1, N)
         ) + center;
 
-        System.out.println(result >= INF ? -1 : result);
+        // warning: Adding 3-value can cause an overflow.
+        System.out.println((center == INF || result >= INF) ? -1 : result);
     }
 
     static class Pair implements Comparable<Pair> {
