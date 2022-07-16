@@ -1,21 +1,21 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         int T = Integer.parseInt(br.readLine());
 
         while (T-- > 0) {
-            String line = br.readLine();
-            if(line.length() >= 1000){
-                throw new RuntimeException("최대 문자 길이 1000인 경우가 들어왔습니다.");
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            while(st.hasMoreTokens()) {
+                sb.append((new StringBuilder(st.nextToken())).reverse().toString()).append(' ');
             }
-            String[] arr = line.split(" ");
-            for(String str : arr){
-                System.out.print(new StringBuilder(str).reverse().toString() + " ");
-            }
-            System.out.println();
+            sb.append('\n');
         }
+
+        System.out.print(sb.toString());
     }
 }
