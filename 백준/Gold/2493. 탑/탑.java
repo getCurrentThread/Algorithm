@@ -22,6 +22,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder out = new StringBuilder();
         int n = Integer.parseInt(in.readLine());
 
         StringTokenizer st = new StringTokenizer(in.readLine());
@@ -33,12 +34,13 @@ public class Main {
             }
 
             if (stack.isEmpty()) { // 현재의 x층 탑보다 큰 값이 stack 내에 없다면 0을 출력
-                System.out.print(0 + " ");
+                out.append(0).append(' ');
             } else { // 현재의 x층 탑보다 큰 값이 stack 내에 있다면, 그 값의 idx를 출력
-                System.out.print(stack.peek().idx + " ");
+                out.append(stack.peek().idx).append(' ');
             }
 
             stack.push(new Node(x, i)); // 새로운 탑을 추가한다. (스택에 남아있는 탑은 내림차순과 같은 구조가 된다.)
         }
+        System.out.print(out);
     }
 }
