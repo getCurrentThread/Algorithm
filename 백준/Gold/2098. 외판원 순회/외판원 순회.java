@@ -1,18 +1,31 @@
 import java.io.*;
 import java.util.*;
-/*
-input:
-4
-0 10 15 20
-5 0 9 10
-6 13 0 12
-8 8 9 0
 
-output:
-35
- */
+/*
+Input:
+16
+0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
+0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1
+0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1
+0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1
+0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1
+0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1
+0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1
+0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1
+0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1
+0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1
+0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1
+0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1
+0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+
+Output:
+16
+*/
 public class Main {
-    static final int MAX = 987654321;
+    static final int MAX = 87654321;
 
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -27,10 +40,10 @@ public class Main {
         }
 
         // i -> j로 갈 수 없는 경우는 0으로 주어지므로 가중치를 MAX로 수정
-        for(int i = 0; i < N; i++) {
-            for(int j = 0; j < N; j++) {
-                if(i == j) continue;
-                if(dist[i][j] == 0)
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+//                if (i == j) continue;
+                if (dist[i][j] == 0)
                     dist[i][j] = MAX;
             }
         }
@@ -46,7 +59,7 @@ public class Main {
         for (int i = 0; i < dp.length; i++) {
             Arrays.fill(dp[i], MAX);
         }
-        return TSP(N, dist, dp, 1 << 0, 0);
+        return TSP(N, dist, dp, 1 << 0, 0); // 0번 도시에서 출발
     }
 
     private static int TSP(final int N, final int[][] dist, final int[][] dp, final int mask, final int cur) {
@@ -64,7 +77,8 @@ public class Main {
                 mn = Math.min(mn, dist[cur][next] + TSP(N, dist, dp, mask | (1 << next), next));
             }
         }
-        
-        return  dp[mask][cur] = mn;
+
+        mn = (mn == MAX) ? MAX + 1 : mn; // 메모이제이션 조건에 걸리기 하기 위해 추가
+        return dp[mask][cur] = mn;
     }
 }
