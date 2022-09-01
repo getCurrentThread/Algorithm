@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
         int r = Integer.parseInt(st.nextToken());
@@ -26,8 +27,9 @@ public class Main {
         int[] result = solve(graph, n, r);
 
         for (int i = 1; i <= n; i++) {
-            System.out.println(result[i]);
+            sb.append(result[i]).append('\n');
         }
+        System.out.println(sb);
     }
 
     private static int[] solve(List<List<Integer>> graph, int n, int r) {
