@@ -1,0 +1,9 @@
+SELECT CART_ID
+FROM (SELECT distinct NAME, CART_ID
+    FROM CART_PRODUCTS 
+    WHERE NAME IN ('Milk', 'Yogurt')
+    ) as c
+GROUP BY CART_ID 
+    HAVING count(CART_ID) >= 2
+ORDER BY CART_ID
+;
